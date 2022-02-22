@@ -77,9 +77,10 @@ namespace ConsoleAppClassCalRedo
             {
                 throw new ArgumentOutOfRangeException(nameof(divideBy));
             }
-            this.DouNum = Math.Round(divideNum, 2);
-            this.DouNumBy = Math.Round(divideBy,2);
-            double Answer = (divideNum / divideBy);
+            this.DouNum = divideNum;
+            this.DouNumBy = divideBy;
+            //            double Answer = (Math.Round(divideNum,2) / Math.Round(divideBy,2));
+            double Answer = divideNum / divideBy;
             return Math.Round(Answer,2);
         }
 

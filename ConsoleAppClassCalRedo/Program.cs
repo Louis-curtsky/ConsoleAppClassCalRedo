@@ -44,7 +44,6 @@ namespace ConsoleAppClassCalRedo
             bool listInputEnd = false;
                      double InputD1 = 0;
                      double InputD2 = 0;
-                  var sumDou = new Calculator(InputD1,InputD2);
 
             List<int> numberList = new List<int>();   
             switch (selection)
@@ -83,6 +82,7 @@ namespace ConsoleAppClassCalRedo
                 case 5:
                     InputD1 = 45.67777;
                     InputD2 = 3.67778;
+                    var sumDou = new Calculator(InputD1,InputD2);
 
                     Console.WriteLine($"{InputD1} / {InputD2} equal to {sumDou.Division(InputD1,InputD2)}");
                     break;
