@@ -5,83 +5,78 @@ namespace ConsoleAppClassCalRedo
 {
     public class Calculator
     {
-        public int NumberFrom;
-        public int NumberTo;
+//        public int NumberFrom;
+//        public int NumberTo;
 
-        private double douNum;
-        private double douNumBy;
+ //       private double douNum;
+//        private double douNumBy;
 
-        public double DouNumBy
-        { 
-            get { return douNumBy; } 
-            set { douNumBy = Math.Round(DouNumBy, 2); }
-        }
-            
-        public double DouNum
-        {
-            get { return douNum; }
-            set { douNum = Math.Round(douNum, 2); }
-        }
+        public decimal DouNumBy;
+        public decimal DouNum;
 
         public Calculator()
         { 
         }
 
-        public Calculator(int numberFrom, int numberTo)
+        public Calculator(decimal douNum, decimal douNumBy)
         {
-            NumberFrom = numberFrom;
-            NumberTo = numberTo;
+            this.DouNum = Math.Round(douNum,2);
+            this.DouNumBy = Math.Round(douNumBy,2);
+        }
+        public decimal Addition(decimal douNum, decimal douNumBy)
+        {
+            this.DouNum = Math.Round(douNum, 2);
+            this.DouNumBy = Math.Round(douNumBy, 2); 
+            return (this.DouNum + this.DouNumBy);
         }
 
-        public Calculator(double dounumber, double dounumberBy)
+        public decimal Addition(params decimal[] numbers)
         {
-            DouNum = dounumber;
-            DouNumBy = dounumberBy;
-        }
-        public int Addition(int numberFrom, int numberTo)
-        {
-            this.NumberFrom = numberFrom;
-            this.NumberTo = numberTo;
-            return (numberFrom+numberTo);
-        }
-
-        public int Addition(params int[] numbers)
-        {
-            var sums = 0;
+            decimal sums = 0;
             foreach (var number in numbers)
             {
-                sums += number;
+                sums += Math.Round(number,2);
             }
-            return sums;
+            return Math.Round(sums,2);
         }
 
-        
-        public int Substraction(int subtrent)
+        public decimal Subtraction(params decimal[] numbers)
         {
-            int Answer = (NumberFrom - subtrent);
-            return Answer;
+            decimal sums = 0;
+            foreach (var number in numbers)
+            {
+                sums -= Math.Round(number, 2);
+            }
+            return Math.Round(sums, 2);
+        }
+/*
+        public decimal Substraction(decimal douNum, decimal douNumBy)
+        {
+            this.DouNum = Math.Round(douNum, 2);
+            this.DouNumBy = Math.Round(douNumBy, 2);
+            return (this.DouNum - this.DouNumBy);
+        }
+*/
+        public decimal Multiplication(decimal douNum, decimal douNumBy)
+        {
+            DouNum = Math.Round(douNum,2);
+            DouNumBy = Math.Round(douNumBy,2);
+            decimal answer = DouNum * DouNumBy;
+            return Math.Round(answer,2);
         }
 
-        public double multiplication(double douNum, double doubNumBy)
+        public decimal Division(decimal divideNum, decimal divideBy)
         {
-            this.DouNum = douNum;
-            this.DouNumBy = douNumBy;
-            double Answer = douNum * douNumBy;
-            return Answer;
-        }
-
-
-        public double Division(double divideNum, double divideBy)
-        {
+            decimal answer = 0;
             if (divideBy == 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(divideBy));
             }
-            this.DouNum = divideNum;
-            this.DouNumBy = divideBy;
+            DouNum = Math.Round(divideNum,2);
+            DouNumBy  = Math.Round(divideBy,2);
             //            double Answer = (Math.Round(divideNum,2) / Math.Round(divideBy,2));
-            double Answer = divideNum / divideBy;
-            return Math.Round(Answer,2);
+            answer = DouNum / DouNumBy;
+            return Math.Round(answer,2);
         }
 
     }// End Cal Con 1

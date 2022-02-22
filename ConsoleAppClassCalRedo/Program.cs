@@ -40,65 +40,90 @@ namespace ConsoleAppClassCalRedo
         static void MathOperation(int selection)
         {
             var sum = new Calculator();
-            int tot = 0;
+            decimal tot = 0;
             bool listInputEnd = false;
-                     double InputD1 = 0;
-                     double InputD2 = 0;
+            decimal InputD1 = 0;
+            decimal InputD2 = 0;
 
-            List<int> numberList = new List<int>();   
+            List<decimal> numberList = new List<decimal>();   
             switch (selection)
             {
                 case 1:
-                    int firstnum = UserInputNumber("Enter 1st number");
-                    int secondnum = UserInputNumber("Enter 2nd number");
-                    Console.WriteLine(firstnum + " + " + secondnum + " is = "+sum.Addition(firstnum, secondnum));
+                    InputD1 = UserInputDouble("Enter 1st number");
+                    InputD2 = UserInputDouble("Enter 2nd number");
+                    tot = sum.Addition(InputD1, InputD2);
+                    Console.WriteLine(InputD1 + " + " + InputD2 + " is = " + tot.ToString("+#.##;-#.##;0"));
+  //                  Console.WriteLine(tot);
                     break;
                 case 2:
                     while (listInputEnd == false)
                     {
-                        int addToListm = UserInputNumber("Add number to list (0 to end): ");
-                        if (addToListm == 0)
+                        decimal addToList = UserInputDouble("Add number to list (0 to end): ");
+                        if (addToList == 0)
                         {
                             listInputEnd = true;
                         }
                         else
                         {
-                            numberList.Add(addToListm);
+                            numberList.Add(addToList);
                         }
                     }
                             for (int i = 0; i < numberList.Count; i++)
                             {
-                                tot += sum.Addition(numberList[i]);
+//                              Console OUT member from LIST
+//                              Console.WriteLine($"Number List {i} is {numberList[i]}");
+                                tot = tot + Math.Round(sum.Addition(numberList[i]),2);
                             }
-                    Console.WriteLine(tot);
-  //                  Console.WriteLine("Sum List is = "+sum);
+                    Console.WriteLine(tot.ToString("+#.##;-#.##;0"));
                     break;
                 case 3:
-                    Console.WriteLine(" is = ");
+                    while (listInputEnd == false)
+                    {
+                        decimal addToList = UserInputDouble("Add number to list (0 to end): ");
+                        if (addToList == 0)
+                        {
+                            listInputEnd = true;
+                        }
+                        else
+                        {
+                            numberList.Add(addToList);
+                        }
+                    }
+                    for (int i = 0; i < numberList.Count; i++)
+                    {
+                        Console.WriteLine($"Number List {i} is {numberList[i]}");
+                        tot = tot + Math.Round(sum.Subtraction(numberList[i]), 2);
+                    }
+                    Console.WriteLine("Subtraction balance = "+tot.ToString("+#.##;-#.##;0"));
                     break;
                 case 4:
-                     Console.WriteLine(" is = ");
+                    InputD1 = UserInputDouble("Enter 1st number");
+                    InputD2 = UserInputDouble("Enter 2nd number");
+                    tot = sum.Multiplication(InputD1, InputD2);
+                    Console.WriteLine(InputD1 + " + " + InputD2 + " is = " + tot.ToString("+#.##;-#.##;0"));
                     break;
                 case 5:
-                    InputD1 = 45.67777;
-                    InputD2 = 3.67778;
+                    InputD1 = UserInputDouble("Enter 1st number");
+                    InputD2 = UserInputDouble("Enter 2nd number");
                     var sumDou = new Calculator(InputD1,InputD2);
 
-                    Console.WriteLine($"{InputD1} / {InputD2} equal to {sumDou.Division(InputD1,InputD2)}");
+  //                  Console.WriteLine($"{InputD1} / {InputD2} equal to {sumDou.Division(InputD1,InputD2)}");
                     break;
             }
         }
+/*
         static int UserInputNumber(string desc)
         {
             string inputed = UserInputStr(desc);
             int number = Convert.ToInt32(inputed);
             return number;
         }
-        
-        static double UserInputDouble(string desc)
+ */       
+        static decimal UserInputDouble(string desc)
         {
             string inputed = UserInputStr(desc);
-            double number = Convert.ToDouble(inputed);
+            decimal number = Convert.ToDecimal(inputed);
+//            Console.WriteLine($"The number after convert = {number}");
             return number;
         }
 
@@ -113,7 +138,8 @@ namespace ConsoleAppClassCalRedo
             Console.WriteLine("----- Menu -----");
             Console.WriteLine("1: ADD Two numbers");
             Console.WriteLine("2: ADD more than TWO numbers");
-            Console.WriteLine("3: MULTIPLICATION Operation");
+            Console.WriteLine("3: MINUS Operation");
+            Console.WriteLine("4: MULTIPLICATION Operation");
             Console.WriteLine("5: DIVISION Operation");
             Console.WriteLine("9: Exit program");
             Console.WriteLine("\nEnter you choice: ");
