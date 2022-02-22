@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppClassCalRedo", "ConsoleAppClassCalRedo\ConsoleAppClassCalRedo.csproj", "{76EE4A32-AE2A-4639-9E9D-B44F0CE1F5E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76EE4A32-AE2A-4639-9E9D-B44F0CE1F5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EE4A32-AE2A-4639-9E9D-B44F0CE1F5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EE4A32-AE2A-4639-9E9D-B44F0CE1F5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EE4A32-AE2A-4639-9E9D-B44F0CE1F5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C101FEAE-0296-4E4E-80B9-DE85148CC82B}
+	EndGlobalSection
+EndGlobal
