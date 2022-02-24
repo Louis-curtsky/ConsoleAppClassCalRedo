@@ -58,10 +58,8 @@ namespace ConsoleAppClassCalRedo.Test
             decimal result = -0m;
             decimal expectedSum = -16.4m;
             //Act
-            for (int i = 0; i < numberList.Count; i++)
-            {
                 result = result + calculator.Subtraction(numberList);
-            }
+
             //Assert
             Assert.Equal(expectedSum, result, 2);
         }
