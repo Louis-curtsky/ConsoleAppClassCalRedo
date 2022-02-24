@@ -64,25 +64,32 @@ namespace ConsoleAppClassCalRedo.Test
             Assert.Equal(expectedSum, result, 2);
         }
 
-/*
+        public static IEnumerable<object[]> SubtractTest2()
+        {
+            yield return new object[] {
+                new List<decimal>() { 1.1m, -3.3m, 5m, 7m, 8.8m },   //numbers
+                -16.4m                                   //expected
+            };
+
+            yield return new object[] {
+                new List<decimal>() { -2.2m, 5.5m, -8.2m, 61.1m },   //numbers
+                -60.6m                                   //expected
+            };
+        }
+
         [Theory]
-        [InlineData(new decimal[] { 1.1m, -3.3m, 5, 7, 8.8m }, 18.6m)]
-        public void SubtractionTest2(decimal[] numberList, decimal expectedSum)
+        [MemberData(nameof(SubtractTest2))]
+        public void DecimalListManyTest(List<decimal> numbers, decimal expected)
         {
             //Arrange
-
+            //MemberData will provide the date
             Calculator calculator = new Calculator();
-            decimal result = -0m;
+            //Act - will just do simple addition math to sum all the values
+            decimal result = calculator.Subtraction(numbers);//Linq has this nice sum method
 
-            //Act
-            for (int i = 0; i < numberList.Count; i++)
-            {
-                result = result + calculator.Subtraction(numberList[i]);
-            }
             //Assert
-            Assert.Equal(expectedSum, result, 2);
+            Assert.Equal(expected, result);
         }
-*/
 
         [Theory]
         [InlineData(30,40,70)]
