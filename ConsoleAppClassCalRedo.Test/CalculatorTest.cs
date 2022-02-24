@@ -56,15 +56,16 @@ namespace ConsoleAppClassCalRedo.Test
             List<decimal> numberList = new List<decimal>() { 1.1m, -3.3m, 5, 7, 8.8m };
             Calculator calculator= new Calculator();
             decimal result = -0m;
-            decimal expectedSum = -18.6m;
+            decimal expectedSum = -16.4m;
             //Act
             for (int i = 0; i < numberList.Count; i++)
             {
-                result = result + calculator.Subtraction(numberList[i]);
+                result = result + calculator.Subtraction(numberList);
             }
             //Assert
             Assert.Equal(expectedSum, result, 2);
         }
+
 /*
         [Theory]
         [InlineData(new decimal[] { 1.1m, -3.3m, 5, 7, 8.8m }, 18.6m)]

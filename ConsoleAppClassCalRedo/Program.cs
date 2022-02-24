@@ -48,10 +48,11 @@ namespace ConsoleAppClassCalRedo
                 {
                     Console.WriteLine(exception.Message);
                 }
-                catch (ArgumentOutOfRangeException)
+  /*              catch (ArgumentOutOfRangeException)
                 {
                     Console.WriteLine("You had enter a Zero !!!");
                 }
+*/
             } while (keepGoing);
         }// End of Main
 
@@ -106,12 +107,10 @@ namespace ConsoleAppClassCalRedo
                             {
                                 numberList.Add(addToList);
                             }
+
+ //                           Console.WriteLine($"Number List {j} is {numberList[j]}");
                         }
-                        for (int i = 0; i < numberList.Count; i++)
-                        {
-                            Console.WriteLine($"Number List {i} is {numberList[i]}");
-                            tot = tot + Math.Round(sum.Subtraction(numberList[i]), 2);
-                        }
+                            tot = Math.Round(sum.Subtraction(numberList), 2);
                         Console.WriteLine("Subtraction balance = " + tot.ToString("+#.##;-#.##;0"));
                         break;
                     case 4:

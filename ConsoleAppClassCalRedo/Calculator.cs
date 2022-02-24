@@ -40,15 +40,16 @@ namespace ConsoleAppClassCalRedo
             return Math.Round(sums,2);
         }
 
-        public decimal Subtraction(params decimal[] numbers)
+        public decimal Subtraction(List<decimal>numbers)
         {
-            decimal sums = -0m;
-            foreach (var number in numbers)
+            decimal sums = Math.Round((numbers[0]), 2);
+            for (int i=1; i<numbers.Count; i++)            
             {
-                sums -= Math.Round(number, 2);
+                    sums = sums - Math.Round((numbers[i]), 2);
             }
             return Math.Round(sums, 2);
         }
+
 /*
         public decimal Substraction(decimal douNum, decimal douNumBy)
         {
