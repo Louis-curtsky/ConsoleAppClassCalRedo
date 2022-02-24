@@ -70,7 +70,7 @@ namespace ConsoleAppClassCalRedo
             decimal answer = 0;
             if (divideBy == 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(divideBy));
+                throw new DivideByZeroException("You are trying to divide by Zero which is not allow!!!");
             }
             DouNum = Math.Round(divideNum,2);
             DouNumBy  = Math.Round(divideBy,2);
