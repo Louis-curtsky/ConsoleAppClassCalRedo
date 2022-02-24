@@ -50,22 +50,40 @@ namespace ConsoleAppClassCalRedo.Test
         }
 
         [Fact]
-          public void ArraySubtractionTest()
+        public void ArraySubtractionTest()
         {
             //Arrange
             List<decimal> numberList = new List<decimal>() { 1.1m, -3.3m, 5, 7, 8.8m };
-            Calculator calculator = new Calculator();
-            decimal result = 0m;
+            Calculator calculator= new Calculator();
+            decimal result = -0m;
             decimal expectedSum = -18.6m;
             //Act
             for (int i = 0; i < numberList.Count; i++)
             {
-                result = result+calculator.Subtraction(numberList[i]);
+                result = result + calculator.Subtraction(numberList[i]);
             }
             //Assert
             Assert.Equal(expectedSum, result, 2);
         }
+/*
+        [Theory]
+        [InlineData(new decimal[] { 1.1m, -3.3m, 5, 7, 8.8m }, 18.6m)]
+        public void SubtractionTest2(decimal[] numberList, decimal expectedSum)
+        {
+            //Arrange
 
+            Calculator calculator = new Calculator();
+            decimal result = -0m;
+
+            //Act
+            for (int i = 0; i < numberList.Count; i++)
+            {
+                result = result + calculator.Subtraction(numberList[i]);
+            }
+            //Assert
+            Assert.Equal(expectedSum, result, 2);
+        }
+*/
 
         [Theory]
         [InlineData(30,40,70)]
