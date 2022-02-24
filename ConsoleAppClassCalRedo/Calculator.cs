@@ -42,7 +42,7 @@ namespace ConsoleAppClassCalRedo
 
         public decimal Subtraction(params decimal[] numbers)
         {
-            decimal sums = 0;
+            decimal sums = -0m;
             foreach (var number in numbers)
             {
                 sums -= Math.Round(number, 2);
